@@ -27,23 +27,26 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="text" class="form-control" id="email" ng-model="email" placeholder="name@domain.com">
+                    <!--TODO regex input-->
+                    <input type="text" class="form-control required" id="email" ng-model="email" placeholder="name@domain.com">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password">
+                    <input type="password" class="form-control required" id="password" ng-model="password" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-default" ng-click="login()">Login</button>
             </div>
         </div>
-        <div ng-show="user">
+        <div ng-show="user" class="jumbotron">
             <img src="{{user.profilePic}}"/>
             <h1>Welcome {{user.name}}</h1>
-            <a href="#" ng-click="newPasswordMode = true" ng-hide="newPasswordMode">Change Password</a>
-            <div ng-show="newPasswordMode">
-                <label for="newPassword">New Password</label>
-                <input type="password" id="newPassword" ng-model="newPassword" placeholder="New Password">
-                <button>Change</button>
+            <a class="btn btn-primary" href="#" ng-click="newPasswordMode = true" ng-hide="newPasswordMode">Change Password</a>
+            <div ng-show="newPasswordMode" class="input-group mb-3">
+                
+                <input type="password" id="newPassword" ng-model="newPassword" aria-label="password" aria-describedby="button-addon" placeholder="New Password" class="form-control">
+                <div class="input-group-append">
+                <button id="button-addon" type="button" class="btn btn-outline-secondary">Change</button>
+                </div>
             </div>
         </div>
     </div>
