@@ -25,9 +25,15 @@ So this is what I would like you to do
 1. After you login you see an ugly Profile UI. Fix it to look better 
 2. Code Review the project: Go through the entire project (even your new feature) and compile a list of changes you would make to the entire project that would make it
   - More Secure
+    modulize the ng-show template area
+    immediate invoke of app.js and loginctl.js
   - Perform Better
+    move login logic to loginctrl instead of server
+    get rid of nested if
   - Better Architecture
+    seperate user page and login page
   - Better User Experiance
+    password helper and confirmation password block
   - Better Design
 Make sure your change list is clear. Mention which file, which line when applicable. Explain how you would change it in a sentence or two
 3. Implement as many of your suggestions as possible
